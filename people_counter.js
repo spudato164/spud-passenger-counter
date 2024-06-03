@@ -11,18 +11,23 @@ let countEl = document.getElementById('count-el')
 console.log(countEl)
 let incBtn = document.getElementById('increment-btn')
 let count = 0
+let stopCount = 0
+let saveEl = document.getElementById('save-el')
 
 function increment() {
     //console.log("!Button was clicked")
-    count = count + 1
+    count += 1
     //console.log(count)
-    countEl.innerText = count
-
-    save(count)
+    countEl.textContent = count
 }
 
-function save(count) {
-    console.log(count)
+function save() {
+    stopCount += 1
+    console.log('Stop Count ' + stopCount + ' : ' + count)
+    countStr = ' ' + count + ' - '
+    saveEl.innerHTML += countStr
+    countEl.textContent = 0
+    count = 0
 }
 
 
